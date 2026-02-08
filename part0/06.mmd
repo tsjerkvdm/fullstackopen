@@ -1,0 +1,13 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    Note over browser: User clicks submit
+    Note right of browser: JS code adds the new node and rerenders
+    
+    browser->>server: POST (new note) https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+    Note left of server: Server saves new note
+
+    server-->>browser: HTTP status code 201 (Created)
+
